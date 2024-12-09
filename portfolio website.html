@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhwani Chounal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Custom Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: #111; /* Black background */
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #000; /* Black navbar */
+        }
+        .navbar .nav-link {
+            color: #fff;
+            font-weight: 500;
+        }
+        .navbar .nav-link:hover {
+            color: #ff0000; /* Red highlight */
+        }
+        .hero {
+            height: 100vh;
+            background: url()no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            color: #fff;
+            animation: fadeIn 2s ease-out;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            color: #ff0000;
+            margin-bottom: 20px;
+            animation: slideInFromLeft 1.5s ease-out;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            animation: slideInFromRight 1.5s ease-out;
+        }
+        .hero .btn {
+            margin-top: 20px;
+            background-color: #ff0000;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            color: #fff;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .hero .btn:hover {
+            background-color: #cc0000;
+        }
+        .services {
+            padding: 80px 20px;
+            background-color: #111;
+        }
+        .services .card {
+            background: #222;
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        .services .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+        }
+        .services .card:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+        .services .card:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+        .services .card:nth-child(3) {
+            animation-delay: 0.9s;
+        }
+        .portfolio {
+            padding: 80px 20px;
+            background: #000;
+        }
+        .portfolio img {
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        .portfolio img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+        }
+        .portfolio img:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+        .portfolio img:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+        .portfolio img:nth-child(3) {
+            animation-delay: 0.9s;
+        }
+        .footer {
+            background: #111;
+            padding: 20px 0;
+            text-align: center;
+            color: #ff0000;
+        }
+        .contact {
+            padding: 20px 20px; /* Reduced padding */
+            background: #222;
+        }
+        .contact h2 {
+            color: #ff0000;
+        }
+        .contact input, .contact textarea {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            width: 100%;
+            margin-bottom: 15px; /* Reduced margin */
+            transition: all 0.3s ease;
+        }
+        .contact input:focus, .contact textarea:focus {
+            background: #444;
+            outline: none;
+        }
+        .contact button {
+            background: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 12px 25px; /* Reduced padding */
+            border-radius: 8px;
+            font-size: 16px; /* Smaller font size */
+            transition: all 0.3s ease;
+        }
+        .contact button:hover {
+            background: #cc0000;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideInFromLeft {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInFromRight {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* About Section */
+        #about {
+            padding: 80px 20px;
+            background-color: #111;
+        }
+        #about h2 {
+            color: #ff0000;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        #about p {
+            color: #fff;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #about img {
+            width: 200px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <h1>"Dhwani Chounal|Creative Designs"</h1>
+        <p>Designing with passion, crafting with precision.</p>
+        <a href="c:\Users\dhwani\Desktop\ctb.html" class="btn">Explore My Work</a> <!-- Link to new page -->  
+    </section> 
+</section>
+<!-- Services Section -->
+<section id="services" class="services">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card" data-aos="fade-up">
+                    <div class="card-body">
+                        <h5 class="card-title">Brand Identity</h5>
+                        <p class="card-text">Building unique and memorable brand identities for businesses.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" data-aos="fade-up">
+                    <div class="card-body">
+                        <h5 class="card-title">Packaging Design</h5>
+                        <p class="card-text">Creating visually appealing and functional packaging designs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" data-aos="fade-up">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Design</h5>
+                        <p class="card-text">Crafting engaging and responsive websites with modern design principles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container text-center">
+            <h2>About Me</h2>
+            <div class="about-section">
+                <div class="about-container">
+                  <div class="about-image">
+                    <img src="c:\Users\dhwani\Downloads\pppp.jpg" alt="Description of the image">
+                  </div>
+                  <div class="about-text">
+                    <p>Hi!!! I’m Dhwani! I’m a communication design student, passionate about challenging myself to learn new skills and push the boundaries of my creativity through fun and innovative designs. I see myself as a dedicated and adaptable individual who is ready to contribute my talents to your firm’s growth.</p>
+                  </div>
+                </div>
+              </div>
+               <style>
+                .about-section {
+                  display: flex;
+                  justify-content: space-around;
+                  align-items: center;
+                  padding: 20px;
+                }
+               .about-container {
+                  display: flex;
+                  align-items: center;
+                }
+                .about-image {
+                  flex: 1;
+                  max-width: 300px;
+                }
+                .about-text {
+                  flex: 2;
+                  padding: 20px;
+                }
+                .about-image img {
+                  border-radius: 50%;
+                  width: 100%;
+                  max-width: 250px;
+                  height: auto;
+                }
+              </style>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Dhwani Chounal. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and AOS (Animate On Scroll) JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        AOS.init(); // Initialize AOS
+    </script>
+</body>
+</html>
